@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty Universe Explorer</title>
+    <meta name="description" content="Explore characters from the Rick and Morty multiverse with this interactive explorer. Search, filter, and view detailed information about your favorite characters.">
+    <meta name="keywords" content="Rick and Morty, characters, API, explorer, multiverse, animation, cartoon">
+    <meta name="author" content="Rick and Morty Explorer">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gangadharrr.github.io/rick-and-morty-explorer/">
+    <meta property="og:title" content="Rick and Morty Universe Explorer">
+    <meta property="og:description" content="Explore characters from the Rick and Morty multiverse with this interactive explorer.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1200px-Rick_and_Morty.svg.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gangadharrr.github.io/rick-and-morty-explorer/">
+    <meta property="twitter:title" content="Rick and Morty Universe Explorer">
+    <meta property="twitter:description" content="Explore characters from the Rick and Morty multiverse with this interactive explorer.">
+    <meta property="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1200px-Rick_and_Morty.svg.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://rickandmortyapi.com/favicon-32x32.png" sizes="32x32">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Get+Schwifty&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="portal-background"></div>
+    
+    <div id="offline-notification" class="offline-notification">
+        <i class="fas fa-wifi-slash"></i>
+        <span>You're offline. Showing cached content.</span>
+        <button id="close-offline-notification"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <header>
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1200px-Rick_and_Morty.svg.png" alt="Rick and Morty Logo" class="logo">
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search characters...">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="filter-container">
+            <select id="status-filter">
+                <option value="">Status: All</option>
+                <option value="alive">Alive</option>
+                <option value="dead">Dead</option>
+                <option value="unknown">Unknown</option>
+            </select>
+            <select id="gender-filter">
+                <option value="">Gender: All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="genderless">Genderless</option>
+                <option value="unknown">Unknown</option>
+            </select>
+        </div>
+        <div id="connection-status" class="connection-status">
+            <span class="status-indicator online"></span>
+            <span class="status-text">Online</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="portal-intro">
+            <h1>Welcome to the Rick and Morty Universe</h1>
+            <p>Explore all the characters from the multiverse!</p>
+        </section>
+
+        <div class="loading" id="loading">
+            <div class="portal-loader"></div>
+            <p>Traveling through dimensions...</p>
+        </div>
+
+        <section id="characters-container" class="characters-container">
+            <!-- Character cards will be inserted here by JavaScript -->
+        </section>
+
+        <div class="pagination">
+            <button id="prev-page" class="page-btn" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+            <div id="page-numbers" class="page-numbers">
+                <!-- Page numbers will be inserted here by JavaScript -->
+            </div>
+            <button id="next-page" class="page-btn">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <div id="character-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created with <i class="fas fa-heart"></i> for Rick and Morty fans | Data from <a href="https://rickandmortyapi.com" target="_blank">Rick and Morty API</a></p>
+        <div class="cache-controls">
+            <button id="clear-cache" title="Clear cached data to fetch fresh content">
+                <i class="fas fa-sync-alt"></i> Clear Cache
+            </button>
+            <span id="cache-status"></span>
+        </div>
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+theme: jekyll-theme-cayman
+title: Rick and Morty Universe Explorer
+description: An interactive Rick and Morty character explorer with offline capabilities
+show_downloads: true
+github:
+  is_project_page: true

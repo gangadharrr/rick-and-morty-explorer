@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gangadharrr.github.io/rick-and-morty-explorer/sitemap.xml
